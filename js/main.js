@@ -8,15 +8,10 @@
   const navLinks = document.getElementById('navLinks');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  window.addEventListener('scroll', () => {
-    nav?.classList.toggle('scrolled', scrollY > 40);
-    document.getElementById('stickyCta')?.classList.toggle('is-visible', scrollY > 400);
-  }, { passive: true });
-
   document.getElementById('navToggle')?.addEventListener('click', () => {
     navLinks?.classList.toggle('open');
   });
-  document.querySelectorAll('.nav-links a').forEach((a) => {
+  navLinks?.querySelectorAll('a').forEach((a) => {
     a.addEventListener('click', () => navLinks?.classList.remove('open'));
   });
 
@@ -37,15 +32,19 @@
     });
   });
 
+  const c = CFG.contact || {};
+  const phone = c.phone || '918105249726';
+  document.getElementById('headerCall')?.setAttribute('href', `tel:+${phone}`);
+  document.getElementById('footerCall')?.setAttribute('href', `tel:+${phone}`);
+
   document.getElementById('contactForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
     const fd = new FormData(e.target);
-    const c = CFG.contact || {};
     const b = CFG.brand || {};
-    const text = `*Interior Enquiry — ${b.name || 'Karthik Designers'}*\n\nName: ${fd.get('name')}\nPhone: ${fd.get('phone')}\nProject: ${fd.get('type')}\n\n— Sent from website`;
-    window.location.href = `https://api.whatsapp.com/send?phone=${c.whatsapp || '918105249726'}&text=${encodeURIComponent(text)}`;
+    const text = `Hi ${b.name || 'Karthik Designers'},\n\nName: ${fd.get('name')}\nPhone: ${fd.get('phone')}\nNeed: ${fd.get('type')}\n\nSent from your website.`;
+    window.location.href = `https://api.whatsapp.com/send?phone=${c.whatsapp || phone}&text=${encodeURIComponent(text)}`;
     const msg = document.getElementById('formMsg');
-    if (msg) { msg.hidden = false; msg.textContent = 'WhatsApp opened — tap Send to submit.'; }
+    if (msg) { msg.hidden = false; msg.textContent = 'WhatsApp opened — tap Send.'; }
   });
 
   const projectModal = document.getElementById('projectModal');
@@ -73,7 +72,7 @@
 
     if (gallery) {
       gallery.innerHTML = images.map((src, i) => `
-        <img src="${src}" alt="${p.title} ${i + 1}" loading="lazy"${i === 0 ? ' class="active"' : ''}>
+        <img src="${src}" alt="${p.title} photo ${i + 1}" loading="lazy"${i === 0 ? ' class="active"' : ''}>
       `).join('');
       gallery.querySelectorAll('img').forEach((img) => {
         img.addEventListener('click', () => setHero(img.getAttribute('src')));
@@ -86,7 +85,6 @@
     projectModal.setAttribute('aria-hidden', 'false');
     projectModal.classList.add('is-open');
     document.body.classList.add('modal-open');
-    document.getElementById('projectClose')?.focus();
   }
 
   function closeProject() {
@@ -96,20 +94,17 @@
     if (!serviceModal || serviceModal.hidden) document.body.classList.remove('modal-open');
   }
 
-  function bindProjectCards() {
-    document.querySelectorAll('[data-project-id]').forEach((card) => {
-      card.addEventListener('click', (e) => {
-        e.preventDefault();
-        openProject(card.getAttribute('data-project-id'));
-      });
-      card.addEventListener('keydown', (e) => {
-        if (e.key !== 'Enter' && e.key !== ' ') return;
-        e.preventDefault();
-        openProject(card.getAttribute('data-project-id'));
-      });
+  document.querySelectorAll('[data-project-id]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      openProject(card.getAttribute('data-project-id'));
     });
-  }
-  bindProjectCards();
+    card.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      openProject(card.getAttribute('data-project-id'));
+    });
+  });
 
   document.getElementById('projectClose')?.addEventListener('click', closeProject);
   document.getElementById('projectBackdrop')?.addEventListener('click', closeProject);
@@ -142,20 +137,17 @@
     if (!projectModal || projectModal.hidden) document.body.classList.remove('modal-open');
   }
 
-  function bindServiceCards() {
-    document.querySelectorAll('[data-service-id]').forEach((card) => {
-      card.addEventListener('click', (e) => {
-        e.preventDefault();
-        openService(card.getAttribute('data-service-id'));
-      });
-      card.addEventListener('keydown', (e) => {
-        if (e.key !== 'Enter' && e.key !== ' ') return;
-        e.preventDefault();
-        openService(card.getAttribute('data-service-id'));
-      });
+  document.querySelectorAll('[data-service-id]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      openService(card.getAttribute('data-service-id'));
     });
-  }
-  bindServiceCards();
+    card.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      openService(card.getAttribute('data-service-id'));
+    });
+  });
 
   document.getElementById('serviceClose')?.addEventListener('click', closeService);
   document.getElementById('serviceBackdrop')?.addEventListener('click', closeService);
@@ -181,40 +173,13 @@
     document.querySelectorAll('.faq-item.is-open').forEach((el) => {
       if (el === item) return;
       el.classList.remove('is-open');
-      el.querySelector('.faq-a').style.maxHeight = '0';
+      const p = el.querySelector('.faq-a');
+      if (p) p.style.maxHeight = '0';
     });
     if (!item || !panel || !inner) return;
     item.classList.toggle('is-open', !open);
     panel.style.maxHeight = !open ? `${inner.scrollHeight}px` : '0';
   });
-
-  const track = document.getElementById('testimonialTrack');
-  const slides = track ? [...track.children] : [];
-  let idx = 0;
-  let timer;
-
-  function goSlide(i) {
-    if (!track || !slides.length) return;
-    idx = (i + slides.length) % slides.length;
-    track.style.transform = `translateX(-${idx * track.parentElement.offsetWidth}px)`;
-    document.querySelectorAll('.testimonial-dot').forEach((d, n) => d.classList.toggle('active', n === idx));
-  }
-
-  function autoplay() {
-    clearInterval(timer);
-    timer = setInterval(() => goSlide(idx + 1), 5000);
-  }
-
-  if (slides.length) {
-    goSlide(0);
-    autoplay();
-    document.getElementById('testimonialPrev')?.addEventListener('click', () => { goSlide(idx - 1); autoplay(); });
-    document.getElementById('testimonialNext')?.addEventListener('click', () => { goSlide(idx + 1); autoplay(); });
-    document.getElementById('testimonialDots')?.addEventListener('click', (e) => {
-      const dot = e.target.closest('.testimonial-dot');
-      if (dot) { goSlide(parseInt(dot.getAttribute('data-index'), 10)); autoplay(); }
-    });
-  }
 
   if (typeof KarthikAnim !== 'undefined') KarthikAnim.init();
 })();

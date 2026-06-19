@@ -7,9 +7,10 @@ const KarthikConfig = (function () {
   const config = {
     brand: {
       name: 'Karthik Designers',
-      tagline: 'Spaces That Inspire Living',
-      motto: 'Design · Detail · Delight',
-      location: 'Raichur & Devadurga',
+      tagline: 'Interior studio · Devadurga',
+      founder: 'Karthik',
+      location: 'Raichur & Devadurga, Karnataka',
+      year: 'Est. 2024',
     },
 
     contact: {
@@ -18,124 +19,120 @@ const KarthikConfig = (function () {
       email: 'hello@karthikdesigners.in',
       whatsapp: '918105249726',
       address: 'Main Road, Devadurga, Raichur District, Karnataka 584111',
-      hours: 'Mon–Sat 10:00 AM – 7:00 PM',
+      hours: 'Mon–Sat, 10 AM – 7 PM',
       mapEmbed: 'https://maps.google.com/maps?q=Devadurga+Karnataka+584111&z=14&output=embed',
       mapLink: 'https://maps.google.com/?q=Devadurga+Karnataka+584111',
     },
 
     hero: {
-      headline: 'Interiors Crafted With Soul',
-      subheadline: 'Bespoke residential & commercial design across Raichur and Devadurga — from concept to completion.',
+      headline: 'Homes designed around how you actually live.',
+      subheadline: 'Karthik Designers works with families and shop owners across Raichur district — planning layouts, choosing materials, and supervising work on site until the last switch plate is fixed.',
       image: 'images/hero/hero-main.jpg',
-      ctaPrimary: 'Book Free Consultation',
-      ctaSecondary: 'View Our Work',
+      note: 'Free site visit in Devadurga, Raichur town & nearby villages.',
     },
 
-    trust: [
-      'Residential Design',
-      'Commercial Spaces',
-      '3D Visualization',
-      'Turnkey Execution',
-      'Raichur & Devadurga',
-      'Free Consultation',
-    ],
+    about: {
+      lead: 'Most clients come to us after visiting ten shops and still not knowing what will look good in their own house. We sit down, measure your rooms, and show you 3D views before a single rupee is spent on carpentry.',
+      body: 'Based on Main Road, Devadurga, we take on 2BHK flats, independent houses, clinics, and small offices. You deal directly with our team — no call centre, no confusing middlemen.',
+      points: [
+        'Site visit & measurement included',
+        '3D preview before work starts',
+        'One team handles design + execution',
+      ],
+    },
 
     services: [
       {
         id: 'residential',
-        title: 'Residential Interiors',
-        desc: 'Homes that feel personal, warm, and effortlessly elegant.',
-        icon: 'home',
-        about: 'We transform houses into homes with tailored layouts, custom furniture, lighting plans, and material palettes that reflect your lifestyle. From 2BHK apartments to luxury villas.',
-        features: ['Living, bedroom & kitchen design', 'Custom furniture & wardrobes', 'Lighting & colour consultation', 'Material & finish selection', 'Project management on site'],
-      },
-      {
-        id: 'commercial',
-        title: 'Commercial Design',
-        desc: 'Offices, retail & hospitality spaces that elevate your brand.',
-        icon: 'building',
-        about: 'Functional, beautiful commercial environments that impress clients and inspire teams. We balance aesthetics with workflow, brand identity, and budget.',
-        features: ['Office & co-working layouts', 'Retail & showroom design', 'Restaurant & cafe interiors', 'Reception & conference rooms', 'Brand-aligned aesthetics'],
+        title: 'Home interiors',
+        desc: 'Living room, bedrooms, pooja unit, TV wall — planned for your family size and daily routine.',
+        about: 'We start with how you use each room: where shoes go, where kids study, how much sunlight you want. Then we draw layouts, pick laminates and paint, and manage carpenters on site.',
+        features: ['Room-wise planning', 'Wardrobes & TV units', 'Lighting layout', 'Paint & false ceiling', 'On-site supervision'],
       },
       {
         id: 'modular',
-        title: 'Modular Kitchens',
-        desc: 'Smart storage, premium finishes, built to last.',
-        icon: 'kitchen',
-        about: 'German-inspired ergonomics meet Indian cooking needs. Soft-close hardware, quartz counters, chimney planning, and layouts for every kitchen size.',
-        features: ['3D kitchen planning', 'Premium laminates & acrylic', 'Quartz & granite counters', 'Soft-close hardware', 'Installation & warranty'],
+        title: 'Modular kitchen',
+        desc: 'Layouts for Indian cooking — chimney placement, tall units, corner solutions.',
+        about: 'We design around your gas line, water point, and storage habits. Soft-close drawers, granite or quartz tops, and finishes that handle daily use in Karnataka heat.',
+        features: ['3D kitchen layout', 'Quartz / granite top', 'Soft-close hardware', 'Chimney & hob planning', 'Installation team'],
+      },
+      {
+        id: 'commercial',
+        title: 'Shops & offices',
+        desc: 'Clinics, coaching centres, retail counters — clean, professional, within budget.',
+        about: 'First impressions matter for your business. We design reception areas, consultation rooms, and workstations that feel organised without looking overdone.',
+        features: ['Reception & waiting area', 'Workstation planning', 'Signage-friendly fronts', 'Durable finishes', 'Quick turnaround'],
       },
       {
         id: 'turnkey',
-        title: 'Turnkey Execution',
-        desc: 'One team from design drawing to final styling.',
-        icon: 'key',
-        about: 'Stop juggling contractors. Karthik Designers manages civil work, electrical, plumbing, false ceiling, painting, and final décor — with transparent timelines and weekly updates.',
-        features: ['End-to-end project management', 'Verified vendor network', 'Weekly progress reports', 'Quality checks at every stage', 'Handover with styling'],
+        title: 'Full project',
+        desc: 'From empty flat to move-in ready — civil, electrical, carpentry, painting.',
+        about: 'You get one timeline and one point of contact. We coordinate electricians, plumbers, and carpenters so you are not chasing five different contractors.',
+        features: ['Single project manager', 'Weekly photo updates', 'Material shopping help', 'Quality checks', 'Final handover walkthrough'],
       },
     ],
 
     projects: [
       {
         id: 'living',
-        title: 'Serene Living Room',
-        category: 'Residential',
+        title: 'Devadurga family home',
+        category: '3BHK',
         location: 'Devadurga',
         image: 'images/portfolio/living-main.jpg',
         gallery: ['images/portfolio/living-main.jpg', 'images/portfolio/living-detail.jpg'],
-        about: 'A calm, layered living space with warm neutrals, natural textures, and soft ambient lighting — designed for a young family in Devadurga.',
-        details: ['Area: 320 sq ft', 'Style: Modern warm minimal', 'Timeline: 6 weeks', 'Scope: Full redesign'],
+        about: 'Young couple wanted a bright living area that could handle guests on weekends and stay easy to clean on weekdays. Warm wood tones, hidden storage under the TV unit, and lights on dimmers for evening use.',
+        details: ['320 sq ft living + dining', '6 weeks', 'Full room makeover'],
       },
       {
         id: 'kitchen',
-        title: 'Pearl White Kitchen',
-        category: 'Modular Kitchen',
+        title: 'Raichur apartment kitchen',
+        category: 'Modular kitchen',
         location: 'Raichur',
         image: 'images/portfolio/kitchen-main.jpg',
         gallery: ['images/portfolio/kitchen-main.jpg', 'images/portfolio/kitchen-detail.jpg'],
-        about: 'Handle-less upper cabinets, quartz island, and concealed storage maximise space in a compact urban kitchen without compromising on style.',
-        details: ['Area: 120 sq ft', 'Finish: Acrylic & quartz', 'Timeline: 4 weeks', 'Scope: Modular kitchen'],
+        about: 'Compact L-shaped kitchen with maximum wall storage. Quartz counter, acrylic shutters, and a tall unit for grains and appliances — built for daily South Indian cooking.',
+        details: ['120 sq ft', '4 weeks', 'Kitchen only'],
       },
       {
         id: 'bedroom',
-        title: 'Hotel-Style Master Suite',
-        category: 'Residential',
+        title: 'Master bedroom, Raichur',
+        category: 'Bedroom',
         location: 'Raichur',
         image: 'images/portfolio/bedroom-main.jpg',
         gallery: ['images/portfolio/bedroom-main.jpg', 'images/portfolio/bedroom-detail.jpg'],
-        about: 'Upholstered feature wall, layered lighting, and walk-in wardrobe integration create a restful retreat with five-star comfort.',
-        details: ['Area: 280 sq ft', 'Style: Contemporary luxury', 'Timeline: 5 weeks', 'Scope: Bedroom + wardrobe'],
+        about: 'Walk-in wardrobe behind the bed wall, reading lights on both sides, and curtains that block afternoon heat. Client wanted hotel comfort without flashy decoration.',
+        details: ['280 sq ft', '5 weeks', 'Bedroom + wardrobe'],
       },
       {
         id: 'office',
-        title: 'Executive Workspace',
+        title: 'Consultancy office',
         category: 'Commercial',
         location: 'Devadurga',
         image: 'images/portfolio/office-main.jpg',
         gallery: ['images/portfolio/office-main.jpg', 'images/portfolio/office-detail.jpg'],
-        about: 'A focused, professional office with acoustic panels, biophilic elements, and ergonomic furniture for a growing consultancy firm.',
-        details: ['Area: 450 sq ft', 'Style: Modern corporate', 'Timeline: 8 weeks', 'Scope: Full office fit-out'],
+        about: 'Four-desk office with a glass meeting corner and filing storage built into the wall. Acoustic panels for client calls and a reception desk visible from the main road.',
+        details: ['450 sq ft', '8 weeks', 'Office fit-out'],
       },
     ],
 
     process: [
-      { step: '01', title: 'Consultation', text: 'We visit your space, understand needs, budget & timeline.' },
-      { step: '02', title: 'Concept & 3D', text: 'Mood boards, layouts & realistic 3D renders for approval.' },
-      { step: '03', title: 'Execution', text: 'Our team manages vendors, quality & on-site coordination.' },
-      { step: '04', title: 'Styling & Handover', text: 'Final décor, styling touches & walkthrough before you move in.' },
+      { step: '1', title: 'Visit & measure', text: 'We come to your site, discuss budget honestly, and take measurements.' },
+      { step: '2', title: '3D & quote', text: 'You see layouts and materials on screen. Fixed quote before work begins.' },
+      { step: '3', title: 'Build', text: 'Our team works on site. You get updates on WhatsApp with photos.' },
+      { step: '4', title: 'Handover', text: 'Final check together. We fix snags before you settle in.' },
     ],
 
-    testimonials: [
-      { name: 'Priya & Ramesh', role: 'Homeowners, Devadurga', text: 'Karthik Designers transformed our 3BHK completely. The 3D previews matched the final result — every rupee well spent.' },
-      { name: 'Dr. Suresh K.', role: 'Clinic Owner, Raichur', text: 'Professional, punctual, and creative. Our clinic now feels premium and patients notice immediately.' },
-      { name: 'Anita M.', role: 'Kitchen Project', text: 'The modular kitchen is stunning and so functional. They understood exactly how we cook and store.' },
-    ],
+    quote: {
+      text: 'They showed us the kitchen in 3D first. What we got looks the same — no surprises, no extra bills at the end.',
+      name: 'Anita M.',
+      role: 'Kitchen project, Raichur',
+    },
 
     faq: [
-      { q: 'Do you offer free consultations?', a: 'Yes. We offer a free initial consultation to understand your space, requirements, and budget before sharing a proposal.' },
-      { q: 'Which areas do you serve?', a: 'We serve Raichur, Devadurga, and surrounding towns in Karnataka. Site visits can be arranged for nearby districts.' },
-      { q: 'How long does a typical home project take?', a: 'A single room takes 3–6 weeks. Full home interiors typically range from 8–16 weeks depending on scope and civil work.' },
-      { q: 'Can I see 3D designs before work starts?', a: 'Absolutely. Every project includes 3D visualisation so you approve layouts, materials, and colours before execution begins.' },
+      { q: 'Is the first visit free?', a: 'Yes. We visit once, understand your needs, and share a rough budget range. Detailed 3D and quotation comes after that — only if you want to proceed.' },
+      { q: 'Do you work outside Raichur?', a: 'Mainly Raichur town, Devadurga, Sindhanur, Manvi and nearby areas. Farther locations — call and we will tell you honestly if we can take it.' },
+      { q: 'How long does a full home take?', a: 'Usually 10–14 weeks for a 2–3 BHK, depending on civil work and material availability. Single rooms are faster — often 4–6 weeks.' },
+      { q: 'Can I buy materials myself?', a: 'You can. Many clients let us source materials because we know reliable suppliers locally and can often get better rates. Either way works.' },
     ],
   };
 
@@ -143,81 +140,83 @@ const KarthikConfig = (function () {
     const b = config.brand;
     const c = config.contact;
     const h = config.hero;
+    const a = config.about;
 
-    document.title = `${b.name} | Interior Design in ${b.location}`;
+    document.title = `${b.name} — Interior Design, ${b.location}`;
 
     document.querySelectorAll('[data-cfg="brand"]').forEach((el) => { el.textContent = b.name; });
     document.querySelectorAll('[data-cfg="tagline"]').forEach((el) => { el.textContent = b.tagline; });
     document.querySelectorAll('[data-cfg="location"]').forEach((el) => { el.textContent = b.location; });
+    document.querySelectorAll('[data-cfg="year"]').forEach((el) => { el.textContent = b.year; });
 
     const heroH = document.getElementById('heroHeadline');
     if (heroH) heroH.textContent = h.headline;
     const heroS = document.querySelector('[data-cfg="hero-sub"]');
     if (heroS) heroS.textContent = h.subheadline;
+    const heroN = document.querySelector('[data-cfg="hero-note"]');
+    if (heroN) heroN.textContent = h.note;
 
     const heroBg = document.getElementById('heroBg');
     if (heroBg && h.image) heroBg.src = h.image;
 
-    const trustHtml = config.trust.map((t) => `<span class="trust-item"><span class="trust-dot"></span>${t}</span>`).join('');
-    ['trustTrackA', 'trustTrackB'].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) el.innerHTML = trustHtml;
-    });
+    const aboutLead = document.querySelector('[data-cfg="about-lead"]');
+    if (aboutLead) aboutLead.textContent = a.lead;
+    const aboutBody = document.querySelector('[data-cfg="about-body"]');
+    if (aboutBody) aboutBody.textContent = a.body;
+    const aboutPoints = document.getElementById('aboutPoints');
+    if (aboutPoints) {
+      aboutPoints.innerHTML = a.points.map((p) => `<li>${p}</li>`).join('');
+    }
 
-    const services = document.getElementById('servicesGrid');
+    const services = document.getElementById('servicesList');
     if (services) {
-      services.innerHTML = config.services.map((s) => `
-        <article class="service-card" data-service-id="${s.id}" role="button" tabindex="0">
-          <span class="service-icon service-icon-${s.icon}" aria-hidden="true"></span>
-          <h3>${s.title}</h3>
-          <p>${s.desc}</p>
-          <span class="card-link">Learn more →</span>
+      services.innerHTML = config.services.map((s, i) => `
+        <article class="service-row" data-service-id="${s.id}" role="button" tabindex="0">
+          <span class="service-num">${String(i + 1).padStart(2, '0')}</span>
+          <div class="service-row-body">
+            <h3>${s.title}</h3>
+            <p>${s.desc}</p>
+          </div>
+          <span class="service-arrow" aria-hidden="true">→</span>
         </article>
       `).join('');
     }
 
     const projects = document.getElementById('projectsGrid');
     if (projects) {
-      projects.innerHTML = config.projects.map((p) => `
-        <article class="project-card" data-project-id="${p.id}" role="button" tabindex="0">
-          <div class="project-card-img">
+      projects.innerHTML = config.projects.map((p, i) => `
+        <article class="work-card${i === 0 ? ' work-card-featured' : ''}" data-project-id="${p.id}" role="button" tabindex="0">
+          <div class="work-card-img">
             <img src="${p.image}" alt="${p.title}" loading="lazy">
-            <span class="project-tag">${p.category}</span>
           </div>
-          <div class="project-card-body">
+          <div class="work-card-info">
+            <span class="work-meta">${p.category} · ${p.location}</span>
             <h3>${p.title}</h3>
-            <p>${p.location}</p>
           </div>
         </article>
       `).join('');
     }
 
-    const process = document.getElementById('processGrid');
+    const process = document.getElementById('processList');
     if (process) {
       process.innerHTML = config.process.map((p) => `
-        <div class="process-step">
-          <span class="process-num">${p.step}</span>
-          <h3>${p.title}</h3>
-          <p>${p.text}</p>
-        </div>
+        <li class="process-item">
+          <span class="process-step">${p.step}</span>
+          <div>
+            <h3>${p.title}</h3>
+            <p>${p.text}</p>
+          </div>
+        </li>
       `).join('');
     }
 
-    const track = document.getElementById('testimonialTrack');
-    const dots = document.getElementById('testimonialDots');
-    if (track) {
-      track.innerHTML = config.testimonials.map((t) => `
-        <div class="testimonial-slide">
-          <div class="stars">★★★★★</div>
-          <blockquote>"${t.text}"</blockquote>
-          <footer><strong>${t.name}</strong><span>${t.role}</span></footer>
-        </div>
-      `).join('');
-    }
-    if (dots) {
-      dots.innerHTML = config.testimonials.map((_, i) => `
-        <button type="button" class="testimonial-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Review ${i + 1}"></button>
-      `).join('');
+    const q = config.quote;
+    const quoteEl = document.getElementById('clientQuote');
+    if (quoteEl) {
+      quoteEl.innerHTML = `
+        <blockquote>"${q.text}"</blockquote>
+        <footer><strong>${q.name}</strong> — ${q.role}</footer>
+      `;
     }
 
     const faq = document.getElementById('faqList');
@@ -233,10 +232,10 @@ const KarthikConfig = (function () {
     const contactList = document.getElementById('contactList');
     if (contactList) {
       contactList.innerHTML = `
-        <li>${c.address}</li>
-        <li><a href="tel:+${c.phone}">${c.phoneDisplay}</a></li>
-        <li><a href="mailto:${c.email}">${c.email}</a></li>
-        <li>${c.hours}</li>
+        <li><strong>Address</strong><span>${c.address}</span></li>
+        <li><strong>Phone</strong><span><a href="tel:+${c.phone}">${c.phoneDisplay}</a></span></li>
+        <li><strong>Email</strong><span><a href="mailto:${c.email}">${c.email}</a></span></li>
+        <li><strong>Hours</strong><span>${c.hours}</span></li>
       `;
     }
 
@@ -247,7 +246,7 @@ const KarthikConfig = (function () {
 
     const wa = document.getElementById('whatsappBtn');
     if (wa) {
-      const msg = encodeURIComponent(`Hello, I'd like to enquire about interior design at ${b.name}.`);
+      const msg = encodeURIComponent(`Hi, I saw your website. I need help with interiors at my place in Raichur area.`);
       wa.href = `https://api.whatsapp.com/send?phone=${c.whatsapp}&text=${msg}`;
     }
 

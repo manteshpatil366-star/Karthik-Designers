@@ -24,18 +24,8 @@ const KarthikAnim = (function () {
     els.forEach((el) => io.observe(el));
   }
 
-  function initScrollProgress() {
-    const bar = document.getElementById('scrollProgress');
-    if (!bar) return;
-    window.addEventListener('scroll', () => {
-      const h = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.width = h > 0 ? `${(scrollY / h) * 100}%` : '0%';
-    }, { passive: true });
-  }
-
   function init() {
     initReveals();
-    initScrollProgress();
   }
 
   return { init };
